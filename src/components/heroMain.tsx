@@ -42,7 +42,7 @@ export function Hero() {
           scrollSnapAlign: "start",
           position: "relative",
           width: "100%",
-          overflow: "hidden",
+          
         }}
       >
         <video
@@ -89,7 +89,6 @@ export function Hero() {
         style={{
           height: "100vh",
           scrollSnapAlign: "start",
-          overflowY: "auto",
           padding: "100px 20px",
           display: "flex",
           flexDirection: "column",
@@ -122,7 +121,6 @@ export function Hero() {
                 width: "400px",
                 height: "550px",
                 borderRadius: "16px",
-                overflow: "hidden",
                 display: "flex",
                 flexDirection: "column",
               }}
@@ -201,10 +199,10 @@ export function Hero() {
         }}
       >
         {/* Description */}
-        <div style={{ flex: "1 1 30%", minWidth: "300px" ,backgroundColor : "#FAFFCA", borderRadius: "20px", padding: "20px", height: "600px", }}>
-          <h2 style={{ paddingBottom: "20px" }}>About Ecostudy 🌳</h2>
-          <h3 style={{ paddingBottom: "40px" }}>Exploring Sustainable Development in Malaysia</h3>
-          <p>
+        <div style={{ flex: "1 1 30%", minWidth: "300px" ,backgroundColor : "#FAFFCA", borderRadius: "20px", padding: "20px", height: "600px" }}>
+          <h2 style={{ paddingBottom: "20px", color:"#000" }}>About Ecostudy 🌳</h2>
+          <h3 style={{ paddingBottom: "40px", color:"#000" }}>Exploring Sustainable Development in Malaysia</h3>
+          <p style={{color:"#000"}}>
             EcoStudy is a collaborative platform dedicated to<br/>
              investigating sustainable development and environmental <br/>
             monitoring in Malaysia through technological and managerial<br/>

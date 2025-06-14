@@ -2,6 +2,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import style from "@/app/(StudentsPage)/syazwani/components/parallax.module.css"
 
 export function Parallax() {
   const [background, setBackground] = useState(20);
@@ -44,22 +45,22 @@ export function Parallax() {
   }, []);
 
   return (
-    <section className="parallax-outer">
+    <section className={style.parallaxOuter}>
       <div
         ref={parallaxRef}
-        className="parallax"
+        className={style.parallax}
         style={{
           background: `linear-gradient(0deg, rgba(131, 58, 180, 1) ${background}%, rgba(253, 29, 29, 1) ${background + 20}%, rgba(252, 176, 69, 1) ${background + 40}%)`,
         }}
       >
-        <img ref={citysky3} className="citsky3" src="images/Parallax/City_Skyline2.png" alt="City Skyline 3" />
-        <img ref={citysky2} className="citsky2" src="images/Parallax/City_Skyline2.png" alt="City Skyline 2" />
-        <img ref={citysky1} className="citsky1" src="images/Parallax/City_Skyline.png" alt="City Skyline 1" />
-        <img ref={shape1} className="shape1" src="images/Parallax/Shape.png" alt="Shape 1" />
-        <img ref={shape2} className="shape2" src="/images/Parallax/Shape2.png" alt="Shape 2" />
+        <img ref={citysky3} className={style.citsky3} src="images/Parallax/City_Skyline2.png" alt="City Skyline 3" />
+        <img ref={citysky2} className={style.citsky2} src="images/Parallax/City_Skyline2.png" alt="City Skyline 2" />
+        <img ref={citysky1} className={style.citysky1} src="images/Parallax/City_Skyline.png" alt="City Skyline 1" />
+        <img ref={shape1} className={style.shape1} src="images/Parallax/Shape.png" alt="Shape 1" />
+        <img ref={shape2} className={style.shape2} src="/images/Parallax/Shape2.png" alt="Shape 2" />
         {/* <img ref={shape1} className="shape3" src="images/Parallax/Shape.png" alt="Shape 1" /> */}
 
-        <div ref={copy} className="copy">
+        <div ref={copy} className={style.copy}>
           <h1>Tourism Management and Visitor Satisfaction at Petronas Twin Towers</h1>
           <h2 style={{ marginTop: "20px", fontSize: "1rem" }}>A study By Syazwani</h2>
         </div>

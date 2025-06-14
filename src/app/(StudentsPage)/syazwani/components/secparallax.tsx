@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Map } from "@/components/ui/map";
 import { Parallax } from "./parallax";
+import style from "@/app/(StudentsPage)/syazwani/components/secparallax.module.css"
 
 export function Secparallax() {
 
@@ -185,57 +186,57 @@ export function Secparallax() {
 
     return (
         <>
-            <section className="parallax-outer">
+            <section className={style.parallaxOuter}>
                 <div
                     ref={parallaxRef}
-                    className="parallax"
+                    className={style.parallax}
                     style={{
                         background:
                             "linear-gradient(180deg,rgba(0, 67, 198, 1) 0%, rgba(1, 22, 69, 1) 100%)",
                     }}
                 >
 
-                    <img ref={city} className="city" src="/images/Parallax/City_Skyline2.png" alt="City Skyline 2" />
-                    <img ref={cloud1} className="cloud1" src="/images/Parallax/cloud.png" alt="" />
-                    <img ref={cloud2} className="cloud2" src="/images/Parallax/cloud.png" alt="" />
-                    <img ref={stars} className="stars" src="/images/Parallax/stars.png" alt="City Skyline 2" />
-                    <img ref={cloud3} className="cloud3" src="/images/Parallax/cloud.png" alt="" />
-                    <img ref={cityfoot} className="cityfooter" src="/images/Parallax/City_Skyline2.png" alt="City Skyline 2" />
-                    <img ref={cityfoot2} className="cityfooter-2" src="/images/Parallax/City_Skyline2.png" alt="City Skyline 2" />
-                    <img ref={cloud3} className="cloud4" src="/images/Parallax/cloud.png" alt="" />
-                    <img className="cloud5" src="/images/Parallax/cloud.png" alt="" />
-                    <img ref={shapered} className="shape22" src="/images/Parallax/shape2full.png" alt="" />
-                    <img ref={shapeblue} className="shape21" src="/images/Parallax/shape.png" alt="" />
+                    <img ref={city} className={style.city} src="/images/Parallax/City_Skyline2.png" alt="City Skyline 2" />
+                    <img ref={cloud1} className={style.cloud1} src="/images/Parallax/cloud.png" alt="" />
+                    <img ref={cloud2} className={style.cloud2} src="/images/Parallax/cloud.png" alt="" />
+                    <img ref={stars} className={style.stars} src="/images/Parallax/stars.png" alt="City Skyline 2" />
+                    <img ref={cloud3} className="" src="/images/Parallax/cloud.png" alt="" />
+                    <img ref={cityfoot} className={style.cityfooter} src="/images/Parallax/City_Skyline2.png" alt="City Skyline 2" />
+                    <img ref={cityfoot2} className={style.cityfootertwo} src="/images/Parallax/City_Skyline2.png" alt="City Skyline 2" />
+                    <img ref={cloud3} className={style.cloud4} src="/images/Parallax/cloud.png" alt="" />
+                    <img className={style.cloud5} src="/images/Parallax/cloud.png" alt="" />
+                    <img ref={shapered} className={style.shapesec} src="/images/Parallax/shape2full.png" alt="" />
+                    <img ref={shapeblue} className={style.shapefirst} src="/images/Parallax/shape.png" alt="" />
 
 
-                    <div className="card-container">
-                        <div className="description-card">
+                    <div className={style.cardcontainer}>
+                        <div className={style.descriptioncard}>
                             <h1 ref={title}>  Background of Study</h1>
-                            <div className="parent-cardies">
+                            <div className={style.parentcardies}>
 
-                                <div className="cardies2" ref={p1}>
+                                <div className={style.cardiessec} ref={p1}>
                                     <p>Welcome to a research-based exploration into how tourism management practices shape customer satisfaction at one of Malaysia&apos;s most iconic landmarks — the PETRONAS Twin Towers. This website summarizes a comprehensive study that highlights key factors influencing the visitor experience, and suggests improvements for sustainable tourism growth.</p></div>
-                                <div className="cardies3"></div>
+                                <div className={style.cardiesthird}></div>
                             </div>
 
                             <h2 ref={objective} style={{ opacity: 0, fontWeight: "bolder", fontSize: "2rem" }}>Objective</h2>
-                            <div className="parent-card">
-                                <div className="card" ref={d1}>
+                            <div className={style.parentCard}>
+                                <div className={style.card} ref={d1}>
                                     <p>Evaluate the effectiveness of current tourism management at the Twin Towers.
                                     </p>
                                 </div>
-                                <div className="card" ref={d2}>
+                                <div className={style.card} ref={d2}>
                                     <p>Assess visitor satisfaction levels.
                                     </p>
                                 </div>
-                                <div className="card" ref={d3}>
+                                <div className={style.card} ref={d3}>
                                     <p>Identify key tourism management factors influencing satisfaction.
                                     </p>
                                 </div>
                             </div>
 
                         </div>
-                        <div className="image-card">
+                        <div className={style.imageCard}>
                             <img ref={image} src="images/Parallax/City_Skyline.png" alt="" />
                         </div>
 
@@ -243,9 +244,7 @@ export function Secparallax() {
 
                 </div>
             </section>
-            <section className="parallax-outer">
 
-            </section>
             <div style={{ height: "200vh" }}></div>
 
         </>

@@ -1,0 +1,204 @@
+.parallaxOuter {
+    overflow: hidden;
+    height: 100%;
+}
+
+.parallax {
+    height: 110vh;
+    width: 100%;
+    position: relative;
+}
+
+.parallax img {
+    position: absolute;
+}
+
+.city {
+    top: 500px;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    left: 1000px;
+}
+
+.cloud1 {
+    opacity: 100%;
+    top: 70%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.cloud2 {
+    opacity: 100%;
+    z-index: 1;
+    right: 30%;
+    bottom: -57%;
+    
+}
+
+.cloud4 {
+    opacity: 100%;
+    /* transform: translate(-50%,-50%); */
+
+    z-index: 1;
+    right: 0%;
+    bottom: -69%;
+    /* left: 80%; */
+}
+
+.cloud5 {
+    opacity: 100%;
+    /* transform: translate(-50%,-50%); */
+    /* border: red solid 1px;     */
+    z-index: 1;
+    right: -50%;
+    bottom: -119%;
+    /* left: 80%; */
+}
+.stars {
+    opacity: 0%;
+    transform: translate(-50%, -50%);
+    left: 900px;
+}
+
+.cityfooter {
+    width: 50%;
+    z-index: 1;
+    top: 60%;
+    opacity: 100%;
+    mix-blend-mode: multiply;
+}
+
+.cityfootertwo {
+    width: 50%;
+    z-index: 1;
+    top: 70%;
+    opacity: 100%;
+    mix-blend-mode: multiply;
+    left: 55%;
+}
+
+.shapesec {
+    top: 80%;
+    z-index: 2;
+    width: 100%;
+}
+
+.shapefirst {
+    top: 75%;
+    z-index: 1;
+    width: 100%;
+}
+
+.cardcontainer {
+    padding: 50px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.descriptioncard {
+    /* border: 1px red solid; */
+    gap: 20px;
+    flex: 1;
+    color: white;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.descriptioncard h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    bottom: 0%;
+    opacity: 0;
+}
+
+.parentcardies {
+    /* border : red solid 1px; */
+    display: flex;
+    gap: 0px;
+}
+
+.cardiesfirst,
+.cardiessec,
+.cardiesthird {
+    /* background-color: rgba(255, 255, 255, 0.05); */
+    /* padding: 20px; */
+    border-radius: 10px;
+    color: white;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    text-align: start;
+}
+
+.cardiesfirst {
+    /* border : red solid 1px; */
+    width: 7%;
+    opacity: 0;
+}
+
+.cardiessec {
+    /* border : red solid 1px; */
+    font-size: 1.3rem;
+    font-weight: bold;
+    width: 60%;
+    opacity: 0;
+    transition:
+        transform 0.3s ease-in-out,
+        background-color 0.3s ease-in-out;
+}
+.cardiessec h1 {
+    /* opacity: 1; */
+    padding: 0;
+}
+
+.cardiesthird {
+    width: 20%;
+    opacity: 0;
+}
+
+.parentCard {
+    margin-top: 0px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    text-align: start;
+    /* border: red 1px solid; */
+}
+
+.card {
+    border-radius: 20px;
+    height: 100px;
+    width: 240px;
+    opacity: 0;
+    background-color: rgba(114, 25, 222, 0.298);
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+    align-content: center;
+    font-weight: bold;
+}
+
+.imageCard {
+    flex: 1;
+    position: relative;
+}
+
+.imageCard img {
+    width: 100%;
+    max-width: 5000px;
+    border-radius: 10px;
+    object-fit: cover;
+    left: 600px;
+    top: 300px;
+    display: block;
+    height: auto;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}

@@ -1,0 +1,150 @@
+/* In your Penetrometer.module.css */
+.page {
+  min-height: 100vh;
+  padding-top: 100px; /* Match your navbar height */
+  overflow-y: auto; /* Enable scrolling */
+}
+
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  color: #2e4b29;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contentCard {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+.textContent {
+  flex: 1;
+}
+
+.leadText {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.featureBox {
+  background-color: #2e4b29;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.featureList {
+  padding-left: 1.5rem;
+  line-height: 1.8;
+}
+
+.featureList li {
+  margin-bottom: 0.5rem;
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+}
+
+.diagram {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  color: #2e4b29;
+  margin: 2rem 0 1.5rem;
+  text-align: center;
+}
+
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stepCard {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  color: #2e4b29;
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stepNumber {
+  background-color: #2e4b29;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.dataSection {
+  margin-top: 2rem;
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.dataTable th, .dataTable td {
+  padding: 12px;
+  text-align: left;
+  
+}
+
+.dataTable th {
+  background-color: #2e4b29;
+  color: white;
+}
+
+.dataTable tr:nth-child(even) {
+  background-color: #b1e76a;
+}
+.dataTable tr:nth-child(odd) {
+  background-color: #b1e76a;
+}
+
+.dataTable tr:hover {
+  background-color: #b7e9b7;
+}
+
+/* Add this new rule */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto !important;
+  background-image: url('/images/green background 5.jpg');
+  background-size: cover;
+  background-position: center;
+}

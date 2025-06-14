@@ -54,7 +54,7 @@
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     flex-direction: column;
     z-index: -1;
     opacity: 0;

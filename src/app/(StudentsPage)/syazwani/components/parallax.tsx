@@ -17,7 +17,7 @@ export function Parallax() {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
-      
+
       const tl = gsap.timeline({
         defaults: { duration: 1 },
         scrollTrigger: {
@@ -27,7 +27,7 @@ export function Parallax() {
           scrub: 1,
           pin: true,
           pinSpacing: true,
-          
+
         },
       });
 
@@ -37,7 +37,7 @@ export function Parallax() {
         .to(citysky2.current, { y: "+=1000" }, 0)
         .to(citysky3.current, { y: "+=1000" }, 0)
         .to(copy.current, { y: "-250%", opacity: 1 }, 0);
-        ScrollTrigger.refresh();
+      ScrollTrigger.refresh();
     });
 
     return () => ctx.revert();
@@ -45,10 +45,10 @@ export function Parallax() {
 
   return (
     <section className="parallax-outer">
-      <div 
-        ref={parallaxRef} 
-        className="parallax" 
-        style={{ 
+      <div
+        ref={parallaxRef}
+        className="parallax"
+        style={{
           background: `linear-gradient(0deg, rgba(131, 58, 180, 1) ${background}%, rgba(253, 29, 29, 1) ${background + 20}%, rgba(252, 176, 69, 1) ${background + 40}%)`,
         }}
       >
@@ -61,10 +61,10 @@ export function Parallax() {
 
         <div ref={copy} className="copy">
           <h1>Tourism Management and Visitor Satisfaction at Petronas Twin Towers</h1>
-          <h2 style={{marginTop: "20px", fontSize: "1rem"}}>A study By Syazwani</h2>
+          <h2 style={{ marginTop: "20px", fontSize: "1rem" }}>A study By Syazwani</h2>
         </div>
       </div>
     </section>
-    
+
   );
 }

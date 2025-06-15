@@ -205,7 +205,7 @@ export function Hero() {
       >
         {/* Description */}
         <div style={{ flex: "1 1 30%", minWidth: "300px" ,backgroundColor : "#FAFFCA", borderRadius: "20px", padding: "20px", height: "600px" }}>
-          <h2 style={{ paddingBottom: "20px", color:"#000", fontWeight: "bold" }}>About Ecostudy 🌳</h2>
+          <h2 style={{ paddingBottom: "20px", color:"#000", fontWeight: "bold", fontSize: "1.5rem" }}>About Ecostudy 🌳</h2>
           <h3 style={{ paddingBottom: "40px", color:"#000", fontWeight: "bold" }}>Exploring Sustainable Development in Malaysia</h3>
           <p style={{color:"#000"}}>
             EcoStudy is a collaborative platform dedicated to<br/>
@@ -297,6 +297,7 @@ export function Hero() {
                     fontSize: "1.25rem",
                     paddingTop: "10px",
                     marginBottom: "8px",
+                    fontWeight: "bold"
                   }}
                 >
                   {card.title}

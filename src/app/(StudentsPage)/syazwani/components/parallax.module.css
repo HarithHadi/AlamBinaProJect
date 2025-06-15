@@ -59,8 +59,10 @@
     z-index: -1;
     opacity: 0;
     color: #ffff;
+    
 }
 
 .copy h1 {
     font-size: 3rem;
+    font-weight: 700;
 }

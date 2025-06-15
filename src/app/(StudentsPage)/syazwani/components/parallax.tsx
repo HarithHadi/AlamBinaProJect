@@ -28,7 +28,6 @@ export function Parallax() {
           scrub: 1,
           pin: true,
           pinSpacing: true,
-
         },
       });
 
@@ -41,7 +40,36 @@ export function Parallax() {
       ScrollTrigger.refresh();
     });
 
-    return () => ctx.revert();
+    // Wait for all images in the parallax section to load before refreshing ScrollTrigger
+    const images = parallaxRef.current?.querySelectorAll('img') as NodeListOf<HTMLImageElement>;
+    let loaded = 0;
+    const handleImagesLoaded = () => {
+      ScrollTrigger.refresh();
+    };
+    if (images && images.length > 0) {
+      images.forEach(img => {
+        if (img.complete) {
+          loaded++;
+        } else {
+          img.addEventListener('load', () => {
+            loaded++;
+            if (loaded === images.length) handleImagesLoaded();
+          });
+        }
+      });
+      if (loaded === images.length) handleImagesLoaded();
+    } else {
+      // If no images, just refresh
+      handleImagesLoaded();
+    }
+
+    // Cleanup
+    return () => {
+      if (images && images.length > 0) {
+        images.forEach(img => img.removeEventListener('load', handleImagesLoaded));
+      }
+      ctx.revert();
+    };
   }, []);
 
   return (

@@ -1,0 +1,91 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem; /* Slightly reduced vertical padding */
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+.navGroup {
+  flex: 1;
+}
+
+.centeredNav {
+  display: flex;
+  align-items: center;
+  gap: 3rem; /* Reduced gap between items */
+  backdrop-filter: blur(8px);
+  padding: 0.8rem 2rem; /* Reduced padding */
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.logoLink {
+  font-size: 1.6rem; /* Reduced from 2rem */
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  margin: 0 1rem; /* Reduced margin */
+}
+
+.logoLink span {
+  color: #2db521;
+}
+
+.logoLink:hover {
+  color: #2db521;
+  transform: scale(1.05);
+}
+
+.navLink {
+  position: relative;
+  font-size: 0.95rem; /* Reduced from 1.1rem */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px; /* Slightly reduced */
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  padding: 0.3rem 0; /* Reduced padding */
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.navLink::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px; /* Slightly thinner */
+  background-color: #2db521;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover {
+  color: #2db521;
+  transform: translateY(-2px);
+}
+
+.navLink:hover::before {
+  width: 100%;
+}
+
+/* Active state */
+.navLink.active {
+  color: #2db521;
+  font-weight: 700;
+}
+
+.navLink.active::before {
+  width: 100%;
+  background-color: #2db521;
+  height: 3px; /* Slightly thinner */
+}

@@ -34,9 +34,11 @@
 
 .cloud2 {
     opacity: 100%;
+    top: auto;
     z-index: 1;
     right: 30%;
     bottom: -57%;
+    /* top: 57%; */
     width: auto;
     height: auto;
     

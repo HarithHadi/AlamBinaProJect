@@ -6,7 +6,7 @@ import { Navbar } from "@/components/navbar";
 const AmirPage = () => {
   return (
     <>  
-    <div style={{ height: "2000px", background: "#B8C9AC" }}>
+    <div style={{background: "#B8C9AC" }}>
       <HeroAmir />
     </div>
     </>

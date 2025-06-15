@@ -204,7 +204,7 @@ export function Secparallax() {
                     <img ref={cityfoot} className={style.cityfooter} src="/images/Parallax/City_Skyline2.png" alt="City Skyline 2" />
                     <img ref={cityfoot2} className={style.cityfootertwo} src="/images/Parallax/City_Skyline2.png" alt="City Skyline 2" />
                     <img ref={cloud3} className={style.cloud4} src="/images/Parallax/cloud.png" alt="" />
-                    <img className={style.cloud5} src="/images/Parallax/cloud.png" alt="" />
+                    <img style={{border: "red 1px solid", top: "10px"}} className={style.cloud5}src="/images/Parallax/cloud.png" alt="" />
                     <img ref={shapered} className={style.shapesec} src="/images/Parallax/Shape2full.png" alt="" />
                     <img ref={shapeblue} className={style.shapefirst} src="/images/Parallax/Shape.png" alt="" />
 

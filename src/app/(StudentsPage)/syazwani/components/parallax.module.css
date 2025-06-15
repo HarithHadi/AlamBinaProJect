@@ -10,21 +10,25 @@
 }
 .parallax img {
     position: absolute;
+    height: auto;
 }
 
 .citsky3{
+    height: auto;
     top: 45%;
     left: 00%;
     width: 60%;
 }
 
 .citsky2 {
+    height: auto;
     top: 40%;
     left: 50%;
     width: 60%;
 }
 
 .citysky1 {
+    height: auto;
     left: 31%;
     top: 50%;
     width: 60%;
@@ -63,6 +67,7 @@
 }
 
 .copy h1 {
+    height: auto;
     font-size: 3rem;
     font-weight: 700;
 }

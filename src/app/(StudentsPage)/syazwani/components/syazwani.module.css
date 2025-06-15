@@ -9,6 +9,10 @@
   overflow: hidden;
 
 }
+
+.pageContainer h1{
+  font-weight: bold;
+}
 .container{
   /* border: 1px red solid; */
   width: 100%;
@@ -16,8 +20,6 @@
   text-align: center;
   flex-direction: column;
   gap: 20px;
-  
-
 }
 
 

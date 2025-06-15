@@ -7,7 +7,7 @@ const cards = [
     id: 1,
     title: "Sweethorn",
     description: "Measuring Soil Compaction Using Five-Point Pocket",
-    image: "/images/Trees.jpeg",
+    image: "/images/Amir1.png",
     link: "/sweethorn",
     quizlink: "/sweethorn/quiz"
   },
@@ -23,7 +23,7 @@ const cards = [
     id: 3,
     title: "Hizran",
     description: "Land use and land cover change at Kampung Bagan Pasir, Tanjung Karang using satellite imagery used change on mangrove ecosystem in sungai merbok , kedah : a remote sensing approach",
-    image: "/images/Trees.jpeg",
+    image: "/images/Sweethorn1.png",
     link: "/amir",
     quizlink: "/amir/quiz"
   },

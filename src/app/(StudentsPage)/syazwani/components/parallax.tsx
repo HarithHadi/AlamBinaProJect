@@ -31,12 +31,13 @@ export function Parallax() {
         },
       });
 
-      tl.to(shape2.current, { y: "-=50" }, 0)
-        .to(shape1.current, { y: "-=50" }, 0)
-        .to(citysky1.current, { y: "+=10" }, 0)
-        .to(citysky2.current, { y: "+=1000" }, 0)
-        .to(citysky3.current, { y: "+=1000" }, 0)
-        .to(copy.current, { y: "-250%", opacity: 1 }, 0);
+      if (shape2.current) tl.to(shape2.current, { y: "-=50" }, 0);
+      if (shape1.current) tl.to(shape1.current, { y: "-=50" }, 0);
+      if (citysky1.current) tl.to(citysky1.current, { y: "+=10" }, 0);
+      if (citysky2.current) tl.to(citysky2.current, { y: "+=1000" }, 0);
+      if (citysky3.current) tl.to(citysky3.current, { y: "+=1000" }, 0);
+      if (copy.current) tl.to(copy.current, { y: "-250%", opacity: 1 }, 0);
+
       ScrollTrigger.refresh();
     });
 

@@ -16,17 +16,19 @@
 .city {
     top: 500px;
     z-index: 0;
-    transform: translate(-50%, -50%);
-    left: 1000px;
+    /* transform: translate(-50%, -50%); */
+    top: 10%;
+
+    left: 000px;
     width: auto;
     height: auto;
 }
 
 .cloud1 {
     opacity: 100%;
-    top: 70%;
-    left: 80%;
-    transform: translate(-50%, -50%);
+    bottom: -60%;
+    left: 10%;
+    /* transform: translate(-50%, -50%); */
     z-index: 1;
     width: auto;
     height: auto;
@@ -65,8 +67,8 @@
 }
 .stars {
     opacity: 0%;
-    transform: translate(-50%, -50%);
-    left: 900px;
+    /* transform: translate(-50%, -50%); */
+    left: 10px;
     height: auto;
     width: auto;
 }
@@ -209,10 +211,10 @@
     max-width: 5000px;
     border-radius: 10px;
     object-fit: cover;
-    left: 600px;
-    top: 300px;
+    left: 100px;
+    top: -70px;
     display: block;
     height: auto;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     opacity: 0;
 }

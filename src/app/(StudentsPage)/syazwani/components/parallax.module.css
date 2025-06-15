@@ -29,10 +29,10 @@
 
 .citysky1 {
     height: auto;
-    left: 31%;
-    top: 50%;
+    left: 1%;
+    top: 10%;
     width: 60%;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
 }
 
 .shape1,

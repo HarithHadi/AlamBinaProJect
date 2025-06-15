@@ -32,6 +32,7 @@
     z-index: 1;
     width: auto;
     height: auto;
+    /* border: 12px red solid; */
 }
 
 .cloud2 {
@@ -39,11 +40,11 @@
     top: auto;
     z-index: 1;
     right: 30%;
-    bottom: -57%;
+    bottom: -5%;
     /* top: 57%; */
     width: auto;
     height: auto;
-    
+    /* border: 1px red solid; */
 }
 
 .cloud4 {
@@ -54,6 +55,8 @@
     right: 0%;
     bottom: -69%;
     /* left: 80%; */
+    /* border: 12px red solid; */
+    
 }
 
 .cloud5 {
@@ -62,7 +65,8 @@
     width: auto;
     z-index: 1;
     right: -50%;
-    bottom: -119%;
+    bottom: -120%;
+    
     /* left: 80%; */
 }
 .stars {

@@ -1,3 +1,4 @@
+import '@/app/globals.css';
 import type { ReactNode } from 'react';
 
 import type { Metadata } from 'next';
@@ -5,7 +6,6 @@ import localFont from 'next/font/local';
 
 import { ThemeProvider } from 'next-themes';
 
-import '@/app/globals.css';
 
 
 const geistSans = localFont({

@@ -105,6 +105,7 @@ export function Hero() {
             fontSize: "2rem",
             marginBottom: "20px",
             textAlign: "center",
+            fontWeight: "bold",
           }}
         >
           Contents
@@ -151,6 +152,7 @@ export function Hero() {
                   style={{
                     fontSize: "1.25rem",
                     marginBottom: "8px",
+                    fontWeight: "bold",
                   }}
                 >
                   {card.title}
@@ -203,8 +205,8 @@ export function Hero() {
       >
         {/* Description */}
         <div style={{ flex: "1 1 30%", minWidth: "300px" ,backgroundColor : "#FAFFCA", borderRadius: "20px", padding: "20px", height: "600px" }}>
-          <h2 style={{ paddingBottom: "20px", color:"#000" }}>About Ecostudy 🌳</h2>
-          <h3 style={{ paddingBottom: "40px", color:"#000" }}>Exploring Sustainable Development in Malaysia</h3>
+          <h2 style={{ paddingBottom: "20px", color:"#000", fontWeight: "bold" }}>About Ecostudy 🌳</h2>
+          <h3 style={{ paddingBottom: "40px", color:"#000", fontWeight: "bold" }}>Exploring Sustainable Development in Malaysia</h3>
           <p style={{color:"#000"}}>
             EcoStudy is a collaborative platform dedicated to<br/>
              investigating sustainable development and environmental <br/>
@@ -249,7 +251,7 @@ export function Hero() {
           textAlign:"start"
         }}
       >
-       <h1 style={{fontSize: "3rem"}}>Take Quiz🤯</h1> 
+       <h1 style={{fontSize: "3rem", fontWeight: "bold"}}>Take Quiz🤯</h1> 
        
        <div
           style={{

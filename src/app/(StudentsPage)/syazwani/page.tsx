@@ -12,11 +12,13 @@ import { Quizsection } from "./components/quizsection";
 
 const Page = () => {
     useEffect(() => {
-        const timer = setTimeout(() => {
-            window.location.reload();
-        }, 2000); // 2000ms = 2 seconds
-
-        return () => clearTimeout(timer);
+        // Only refresh if not already refreshed
+        if (typeof window !== "undefined" && !localStorage.getItem("syazwaniRefreshed")) {
+            localStorage.setItem("syazwaniRefreshed", "true");
+            setTimeout(() => {
+                window.location.reload();
+            }, 2000); // 2 seconds
+        }
     }, []);
 
     return (

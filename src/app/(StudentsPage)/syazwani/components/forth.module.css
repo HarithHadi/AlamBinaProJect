@@ -15,7 +15,8 @@
 
 .pageContainer h1{
     font-size: 3rem;
-    color: white
+    color: white;
+    font-weight: bold;
     
 }
 
@@ -51,6 +52,10 @@
     
     /* opacity: 0; */
 }
+
+
+
+
 
 .chartdiv{
     

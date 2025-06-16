@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import { Card, CardHeader, CardBody, Image } from "@heroui/react";
 import Link from "next/link";
+import { useLayoutEffect } from "react";
 
 const cards = [
   {

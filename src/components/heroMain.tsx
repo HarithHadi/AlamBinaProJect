@@ -1,7 +1,9 @@
 import { Button } from "./ui/button";
 import { Card, CardHeader, CardBody, Image } from "@heroui/react";
 import Link from "next/link";
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const cards = [
   {
@@ -23,316 +25,386 @@ const cards = [
   {
     id: 3,
     title: "Hizran",
-    description: "Land use and land cover change at Kampung Bagan Pasir, Tanjung Karang using satellite imagery used change on mangrove ecosystem in sungai merbok , kedah : a remote sensing approach",
+    description: "Land use and land cover change at Kampung Bagan Pasir, Tanjung Karang using satellite imagery used change on mangrove ecosystem in sungai merbok , kedah : a remote sensing approach",
     image: "/images/Amir1.png",
     link: "/amir",
     quizlink: "/amir/quiz"
   },
 ];
 
+// const parallaxRef = useRef(null);
+
+
 export function Hero() {
+  const parallaxRef = useRef<HTMLDivElement>(null);
+  const vidback = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+  
+    const video = vidback.current;
+    const container = parallaxRef.current;
+  
+    if (!video || !container) return;
+  
+    const ctx = gsap.context(() => {
+      // Opacity decreases from 0.9 to 0.2 as user scrolls
+      gsap.to(video, {
+        scrollTrigger: {
+          trigger: container,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+        },
+        opacity: 0.2,
+        ease: "none",
+      });
+  
+      // Y-axis movement (optional visual effect)
+      gsap.to(video, {
+        scrollTrigger: {
+          trigger: container,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+        },
+        y: "100px", // move down slowly
+        ease: "none",
+      });
+  
+      // Sync currentTime for dynamic effect when paused
+      ScrollTrigger.create({
+        trigger: container,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+        onUpdate: (self) => {
+          if (video.paused && video.duration) {
+            video.currentTime = video.duration * self.progress;
+          }
+        },
+      });
+  
+      video.play();
+    }, parallaxRef);
+  
+    return () => ctx.revert();
+  }, []);
+  
+
   return (
-    <div
-      style={{
-        height: "100vh",
-        overflowY: "scroll",
-        scrollSnapType: "y mandatory",
-      }}
-    >
-      {/* Hero Section */}
-      <section
+    <div style={{ height: "100vh", overflow: "hidden" }}>
+      <div
+        ref={parallaxRef}
         style={{
           height: "100vh",
-          scrollSnapAlign: "start",
+          overflowY: "auto",
           position: "relative",
-          width: "100%",
-          
+          WebkitOverflowScrolling: "touch",
         }}
       >
+        {/* Video Background */}
         <video
           autoPlay
           muted
           loop
           playsInline
           style={{
-            position: "absolute",
+            position: "fixed",
             top: 0,
             left: 0,
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            opacity: "90%",
+            opacity: "0.9",
+            zIndex: 0,
+            pointerEvents: "none",
           }}
+          ref={vidback}
         >
           <source src="/images/treesback.mp4" type="video/mp4" />
         </video>
 
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            color: "white",
-            fontSize: "3rem",
-            fontWeight: "bold",
-            textAlign: "center",
-            textShadow: "2px 2px 4px #000",
-            padding: "0 20px",
-            zIndex: 1,
-          }}
-        >
-          Sustainable Development and Environmental Monitoring
-          <br />
-          through Technological and Managerial Approaches in Malaysia
-        </div>
-      </section>
-
-      {/* Contents Section */}
-      <section
-        style={{
-          height: "100vh",
-          scrollSnapAlign: "start",
-          padding: "100px 20px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          boxSizing: "border-box",
-          width: "100%",
-        }}
-      >
-        <h2
-          style={{
-            fontSize: "2rem",
-            marginBottom: "20px",
-            textAlign: "center",
-            fontWeight: "bold",
-          }}
-        >
-          Contents
-        </h2>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: "60px",
-          }}
-        >
-          {cards.map((card) => (
-            <div
-              key={card.id}
-              style={{
-                width: "400px",
-                height: "550px",
-                borderRadius: "16px",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <div style={{ width: "100%", height: "300px" }}>
-                <img
-                  src={card.image}
-                  alt={card.title}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-              <div
-                style={{
-                  padding: "16px",
-                  flex: "1",
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: "1.25rem",
-                    marginBottom: "8px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  {card.title}
-                </h3>
-                <p
-                  style={{
-                    color: "#555",
-                    marginBottom: "16px",
-                    flex: "1",
-                  }}
-                >
-                  {card.description}
-                </p>
-                <Link href={card.link}>
-                  <button
-                    style={{
-                      padding: "10px 16px",
-                      backgroundColor: "#000000",
-                      color: "#92CA6A",
-                      border: "none",
-                      borderRadius: "8px",
-                      cursor: "pointer",
-                    }}
-                  >
-                    Learn More
-                  </button>
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* About Ecostudy Section */}
-      <section
-        style={{
-          height: "100vh",
-          scrollSnapAlign: "start",
-          display: "flex",
-          flexDirection : "column",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-          alignItems: "center",
-          gap: "10px",
-          padding: "200px 20px",
-          width: "100%",
-          margin: "0 auto",
-          boxSizing: "border-box",
-        }}
-      >
-        {/* Description */}
-        <div style={{ flex: "1 1 30%", minWidth: "300px" ,backgroundColor : "#FAFFCA", borderRadius: "20px", padding: "20px", height: "600px" }}>
-          <h2 style={{ paddingBottom: "20px", color:"#000", fontWeight: "bold", fontSize: "1.5rem" }}>About Ecostudy 🌳</h2>
-          <h3 style={{ paddingBottom: "40px", color:"#000", fontWeight: "bold" }}>Exploring Sustainable Development in Malaysia</h3>
-          <p style={{color:"#000"}}>
-            EcoStudy is a collaborative platform dedicated to<br/>
-             investigating sustainable development and environmental <br/>
-            monitoring in Malaysia through technological and managerial<br/>
-             approaches. Our team of researchers focuses on <br/>
-            pressing ecological and socio-economic challenges, <br/>
-            leveraging tools like remote sensing, field surveys,<br/>
-             and data analytics to drive actionable insights for <br/>
-             conservation and policy-making.
-          </p>
-        </div>
-
-        {/* Image */}
-        <div style={{ flex: "1 1 70%", minWidth: "300px" }}>
-          <img
-            src="/images/Trees.jpeg"
-            alt=""
+        {/* Content Container */}
+        <div style={{ position: "relative", zIndex: 1  }}>
+          {/* 1. Landing Section */}
+          <div
             style={{
+              height: "100vh",
               width: "100%",
-              height: "600px",
-              objectFit: "cover",
-              borderRadius: "16px",
-              
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              position: "relative",
             }}
-          />
-        </div>
-      </section>
-      <section
-        style={{
-          height: "100vh",
-          scrollSnapAlign: "start",
-          display: "flex",
-          flexDirection : "column",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-          alignItems: "center",
-          gap: "10px",
-          padding: "200px 20px",
-          width: "100%",
-          margin: "0 auto",
-          boxSizing: "border-box",
-          textAlign:"start"
-        }}
-      >
-       <h1 style={{fontSize: "3rem", fontWeight: "bold"}}>Take Quiz🤯</h1> 
-       
-       <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: "60px",
-          }}
-        >
-          {cards.map((card) => (
+          >
             <div
-              key={card.id}
               style={{
-                width: "400px",
-                height: "450px",
-                borderRadius: "16px",
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
+                color: "white",
+                fontSize: "3rem",
+                fontWeight: "bold",
+                textAlign: "center",
+                textShadow: "2px 2px 4px #000",
+                padding: "0 20px",
               }}
             >
-              
-              <div
-                style={{
-                  padding: "16px",
-                  flex: "1",
-                  display: "flex",
-                  flexDirection: "column",
-                  backgroundColor : "#5DAD24"
-                }}
-              >              
-                <p
+              Sustainable Development and Environmental Monitoring
+              <br />
+              through Technological and Managerial Approaches in Malaysia
+            </div>
+          </div>
+
+          {/* 2. Contents Section */}
+          <div
+            style={{
+              minHeight: "100vh",
+              padding: "100px 20px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              boxSizing: "border-box",
+              width: "100%",
+              position: "relative",
+            }}
+          >
+            <h2
+              style={{
+                fontSize: "2rem",
+                marginBottom: "20px",
+                textAlign: "center",
+                fontWeight: "bold",
+                color: "white"
+              }}
+            >
+              Contents
+            </h2>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                gap: "60px",
+              }}
+            >
+              {cards.map((card) => (
+                <div
+                  key={card.id}
                   style={{
-                    color: "#000",
-                    marginBottom: "16px",
-                    flex: "1",
+                    width: "400px",
+                    height: "550px",
+                    borderRadius: "16px",
+                    display: "flex",
+                    flexDirection: "column",
+                    backgroundColor: "white",
+                    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                   }}
                 >
-                  {card.description}
-                </p>
-                <h3
-                  style={{
-                    fontSize: "1.25rem",
-                    paddingTop: "10px",
-                    marginBottom: "8px",
-                    fontWeight: "bold"
-                  }}
-                >
-                  {card.title}
-                </h3>
-                <h5
-                  style={{
-                    marginBottom: "8px",
-                    color :"#FFFF",
-                    fontWeight:"lighter"
-                  }}
-                >
-                  Alam Bina Student
-                </h5>
-              </div>
-              <Link href={card.quizlink}>
-                  <button
+                  <div style={{ width: "100%", height: "300px" }}>
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        borderTopLeftRadius: "16px",
+                        borderTopRightRadius: "16px",
+                      }}
+                    />
+                  </div>
+                  <div
                     style={{
-                      marginTop : "30px",
-                      padding: "10px 16px",
-                      backgroundColor: "#000000",
-                      color: "#92CA6A",
-                      border: "none",
-                      borderRadius: "10px",
-                      cursor: "pointer",
+                      padding: "16px",
+                      flex: "1",
+                      display: "flex",
+                      flexDirection: "column",
                     }}
                   >
-                    Start
-                  </button>
-                </Link>
+                    <h3
+                      style={{
+                        fontSize: "1.25rem",
+                        marginBottom: "8px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {card.title}
+                    </h3>
+                    <p
+                      style={{
+                        color: "#555",
+                        marginBottom: "16px",
+                        flex: "1",
+                      }}
+                    >
+                      {card.description}
+                    </p>
+                    <Link href={card.link}>
+                      <button
+                        style={{
+                          padding: "10px 16px",
+                          backgroundColor: "#000000",
+                          color: "#92CA6A",
+                          border: "none",
+                          borderRadius: "8px",
+                          cursor: "pointer",
+                        }}
+                      >
+                        Learn More
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
             </div>
-            
-          ))}
           </div>
-      </section>
+
+          {/* 3. About Section */}
+          <div
+            style={{
+              minHeight: "100vh",
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "nowrap",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "10px",
+              padding: "200px 20px",
+              width: "100%",
+              margin: "0 auto",
+              boxSizing: "border-box",
+            }}
+          >
+            <div style={{ flex: "1 1 30%", minWidth: "300px", backgroundColor: "#FAFFCA", borderRadius: "20px", padding: "20px", height: "600px" }}>
+              <h2 style={{ paddingBottom: "20px", color: "#000", fontWeight: "bold", fontSize: "1.5rem" }}>About Ecostudy 🌳</h2>
+              <h3 style={{ paddingBottom: "40px", color: "#000", fontWeight: "bold" }}>Exploring Sustainable Development in Malaysia</h3>
+              <p style={{ color: "#000" }}>
+                EcoStudy is a collaborative platform dedicated to<br />
+                investigating sustainable development and environmental <br />
+                monitoring in Malaysia through technological and managerial<br />
+                approaches. Our team of researchers focuses on <br />
+                pressing ecological and socio-economic challenges, <br />
+                leveraging tools like remote sensing, field surveys,<br />
+                and data analytics to drive actionable insights for <br />
+                conservation and policy-making.
+              </p>
+            </div>
+
+            <div style={{ flex: "1 1 70%", minWidth: "300px" }}>
+              <img
+                src="/images/Trees.jpeg"
+                alt=""
+                style={{
+                  width: "100%",
+                  height: "600px",
+                  objectFit: "cover",
+                  borderRadius: "16px",
+                }}
+              />
+            </div>
+          </div>
+
+          {/* 4. Quiz Section */}
+          <div
+            style={{
+              minHeight: "100vh",
+              display: "flex",
+              flexDirection: "column",
+              flexWrap: "wrap",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "10px",
+              padding: "200px 20px",
+              width: "100%",
+              margin: "0 auto",
+              boxSizing: "border-box",
+              textAlign: "start",
+            }}
+          >
+            <h1 style={{ fontSize: "3rem", fontWeight: "bold", color: "white" }}>Take Quiz🤯</h1>
+
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                gap: "60px",
+              }}
+            >
+              {cards.map((card) => (
+                <div
+                  key={card.id}
+                  style={{
+                    width: "400px",
+                    height: "450px",
+                    borderRadius: "16px",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                    backgroundColor: "#5DAD24",
+                    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                    padding: "20px"
+                  }}
+                >
+                  <div
+                    style={{
+                      padding: "16px",
+                      flex: "1",
+                      display: "flex",
+                      flexDirection: "column",
+                      backgroundColor: "#5DAD24"
+                    }}
+                  >
+                    <p
+                      style={{
+                        color: "#000",
+                        marginBottom: "16px",
+                        flex: "1",
+                      }}
+                    >
+                      {card.description}
+                    </p>
+                    <h3
+                      style={{
+                        fontSize: "1.25rem",
+                        paddingTop: "10px",
+                        marginBottom: "8px",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      {card.title}
+                    </h3>
+                    <h5
+                      style={{
+                        marginBottom: "8px",
+                        color: "#FFFF",
+                        fontWeight: "lighter"
+                      }}
+                    >
+                      Alam Bina Student
+                    </h5>
+                  </div>
+                  <Link href={card.quizlink}>
+                    <button
+                      style={{
+                        marginTop: "30px",
+                        padding: "10px 16px",
+                        backgroundColor: "#000000",
+                        color: "#92CA6A",
+                        border: "none",
+                        borderRadius: "10px",
+                        cursor: "pointer",
+                        width: "100%"
+                      }}
+                    >
+                      Start
+                    </button>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

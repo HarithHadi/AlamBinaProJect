@@ -25,7 +25,7 @@ const cards = [
   {
     id: 3,
     title: "Hizran",
-    description: "Land use and land cover change at Kampung Bagan Pasir, Tanjung Karang using satellite imagery used change on mangrove ecosystem in sungai merbok , kedah : a remote sensing approach",
+    description: "Land Use And Land Cover Change At Kampung Bagan Pasir, Tanjung Karang Using Satellite Imagery",
     image: "/images/Amir1.png",
     link: "/amir",
     quizlink: "/amir/quiz"
@@ -291,7 +291,7 @@ export function Hero() {
 
             <div style={{ flex: "1 1 70%", minWidth: "300px" }}>
               <img
-                src="/images/Trees.jpeg"
+                src="/images/EcoStudy.png"
                 alt=""
                 style={{
                   width: "100%",

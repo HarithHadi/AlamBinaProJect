@@ -42,17 +42,17 @@ export function HeroAmir() {
 
         <div className={styles.grid}>
           <div>
-            <h3>Background Information</h3>
+            <h1>Background Information</h1>
             <ul>
-            Land Use and Land Cover (LULC) changes are pressing environmental issues in coastal and mangrove areas like Kampung Bagan Pasir in Tanjung Karang, Malaysia, where human 
+            <li>Land Use and Land Cover (LULC) changes are pressing environmental issues in coastal and mangrove areas like Kampung Bagan Pasir in Tanjung Karang, Malaysia, where human 
             activities such as logging, urbanization, and aquaculture development degrade and fragment ecosystems, threatening local fisheries, coastal protection, and wildlife. 
             Traditional field-based monitoring methods face limitations, making remote sensing with satellite imagery a practical alternative for tracking spatial and temporal LULC changes. 
-            This study aims to analyze these changes over recent decades, identify key drivers, and assess environmental impacts to guide conservation efforts and promote sustainable land management in the region.
+            This study aims to analyze these changes over recent decades, identify key drivers, and assess environmental impacts to guide conservation efforts and promote sustainable land management in the region.</li>
 
 
             </ul>
 
-            <h3>Problem Statement</h3>
+            <h1>Problem Statement</h1>
             <ul>
             <li>This mangrove ecosystem provides critical habitat for a diverse range of species,
             supports local fisheries, and provides important ecosystem services such as carbon
@@ -61,13 +61,13 @@ export function HeroAmir() {
             cover (LULC) changes that compromise its sustainability and health.</li>
             </ul>
 
-            <h3>Research Objective</h3>
+            <h1>Research Objective</h1>
             <ul>
               <li>To determine the spatial and temporal patterns of land use and land cover changes in the Kampung Bagan Pasir, Tanjung Karang over recent decades.</li>
               <li>To map the change detection for mangrove swamp forest in Kampung Bagan Pasir, Tanjung Karang</li>
             </ul>
 
-            <h3>Significance of The Study</h3>
+            <h1>Significance of The Study</h1>
             <ul>
               <li>This study is significant as it aims to have significant implications for both natural ecosystems and human societies. Examining LULC changes in Kampung
                 Bagan Pasir, Tanjung Karang, using remote satellite data offers important new perspectives on the scientific, policy, economical, and environmental aspects of 
@@ -120,17 +120,17 @@ export function HeroAmir() {
         <div className={styles.scopeGrid}>
           <div>
             <Image src="/images/mangroveForest.jpg" alt="Erosion" width={300} height={200} className={styles.scopeImage} />
-            <h3>Study Focus: Mangrove Ecosystems at Risk</h3>
+            <h1>Study Focus: Mangrove Ecosystems at Risk</h1>
             <p>This research assesses land use and land cover (LULC) changes in Kampung Bagan Pasir&apos;s mangrove ecosystems from 2000 to 2025. Mangroves here are vital for coastal protection, biodiversity, and carbon storage, but face threats from urbanization, aquaculture, and natural processes. The study maps these changes using satellite data to guide sustainable management strategies.</p>
           </div>
           <div>
             <Image src="/images/satellite.jpg" alt="Fishing boat" width={300} height={200} className={styles.scopeImage} />
-            <h3>Challenges in Remote Sensing Analysis</h3>
+            <h1>Challenges in Remote Sensing Analysis</h1>
             <p>The study relies on satellite imagery (Landsat, Sentinel, ALOS) but faces limitations like cloud cover, sensor inconsistencies, and coarse resolution (10-30 m), which may miss fine-scale mangrove changes. Advanced techniques like machine learning (Random Forest, NDVI) help, but ground truth data is scarce due to tough terrain and tidal effects, impacting accuracy.</p>
           </div>
           <div>
             <Image src="/images/mangroveRestoration.jpg" alt="Carbon cycle" width={300} height={200} className={styles.scopeImage} />
-            <h3>Policy Gaps & Conservation Strategies</h3>
+            <h1>Policy Gaps & Conservation Strategies</h1>
             <p>Beyond technical hurdles, inconsistent policies and poor interagency coordination hinder conservation. Conflicting land-use priorities and limited access to high-resolution data challenge planning. Effective mangrove management requires collaboration between governments, scientists, and local communities to balance development and ecological sustainability.</p>
           </div>
         </div>

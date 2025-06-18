@@ -139,12 +139,3 @@
 }
 
 /* Add this new rule */
-body, html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: auto !important;
-  background-image: url('/images/green background 5.jpg');
-  background-size: cover;
-  background-position: center;
-}

@@ -9,7 +9,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-
+import type { ChartOptions } from 'chart.js';
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const data = {
@@ -23,7 +23,7 @@ const data = {
   ],
 };
 
-const options = {
+const options:ChartOptions<'bar'> = {
   indexAxis: 'y' as const,
   responsive: true,
   animation: {

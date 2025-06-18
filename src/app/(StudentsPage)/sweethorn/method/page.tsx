@@ -8,8 +8,10 @@ import {
 } from "react-icons/fa";
 import Navbar from '../Navbar'
 import styles from './Method.module.css';
+import { useEffect, useState } from 'react';
 
 export default function Method() {
+  const [isVisible, setIsVisible] = useState(false);
   const steps = [
     {
       title: "STEP 1: Identify the Test Area",
@@ -38,18 +40,25 @@ export default function Method() {
     }
   ];
 
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
     <div className={styles.methodPage}>
       <Navbar />
       
       <section className={styles.section}>
-        <h1 className={styles.mainTitle}>What is the Five-Point Method?</h1>
+        <h1 className={`${styles.mainTitle} ${isVisible ? styles.fadeIn : ''}`}>
+          What is the Five-Point Method?
+        </h1>
         
         <div className={styles.stepContainer}>
           {steps.map((step, index) => (
             <div 
               key={index}
-              className={styles.stepCard}
+              className={`${styles.stepCard} ${isVisible ? styles.fadeIn : ''}`}
+              style={{ animationDelay: `${0.2 + index * 0.1}s` }}
             >
               <div className={styles.stepHeader}>
                 {step.icon}

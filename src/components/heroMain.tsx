@@ -154,109 +154,142 @@ export function Hero() {
             </div>
           </div>
 
-          {/* 2. Contents Section */}
+          
+          {/* 2. Contents Section - Modified with glass effect container */}
+<div
+  style={{
+    minHeight: "100vh",
+    padding: "100px 20px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    boxSizing: "border-box",
+    width: "100%",
+    position: "relative",
+  }}
+>
+  {/* Glass container for title and cards */}
+  <div
+    style={{
+      backgroundColor: "rgba(255, 255, 255, 0.1)",
+      backdropFilter: "blur(10px)",
+      borderRadius: "20px",
+      padding: "60px",
+      width: "100%",
+      maxWidth: "1500px",
+      boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.15)",
+      border: "1px solid rgba(255, 255, 255, 0.18)"
+    }}
+  >
+    <h2
+      style={{
+        fontSize: "3rem",
+        marginBottom: "40px",
+        textAlign: "center",
+        fontWeight: "bold",
+        color: "white",
+        textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)"
+      }}
+    >
+      Contents
+    </h2>
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        gap: "60px",
+      }}
+    >
+      {cards.map((card) => (
+        <div
+          key={card.id}
+          style={{
+            width: "400px",
+            height: "550px",
+            borderRadius: "16px",
+            display: "flex",
+            flexDirection: "column",
+            backgroundColor: "rgba(255, 255, 255, 0.85)",
+            boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+            backdropFilter: "blur(5px)",
+            border: "1px solid rgba(255, 255, 255, 0.3)",
+            transition: "transform 0.3s ease",
+          }}
+        >
+          <div style={{ width: "100%", height: "300px" }}>
+            <img
+              src={card.image}
+              alt={card.title}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderTopLeftRadius: "16px",
+                borderTopRightRadius: "16px",
+              }}
+            />
+          </div>
           <div
             style={{
-              minHeight: "100vh",
-              padding: "100px 20px",
+              padding: "16px",
+              flex: "1",
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
-              boxSizing: "border-box",
-              width: "100%",
-              position: "relative",
             }}
           >
-            <h2
+            <h3
               style={{
-                fontSize: "2rem",
-                marginBottom: "20px",
-                textAlign: "center",
+                fontSize: "1.5rem",
+                marginBottom: "8px",
                 fontWeight: "bold",
-                color: "white"
+                color: "#2e4b29",
               }}
             >
-              Contents
-            </h2>
-            <div
+              {card.title}
+            </h3>
+            <p
               style={{
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
-                gap: "60px",
+                color: "#555",
+                marginBottom: "16px",
+                flex: "1",
+                fontSize: "1.1rem",
+                lineHeight: "1.6",
               }}
             >
-              {cards.map((card) => (
-                <div
-                  key={card.id}
-                  style={{
-                    width: "400px",
-                    height: "550px",
-                    borderRadius: "16px",
-                    display: "flex",
-                    flexDirection: "column",
-                    backgroundColor: "white",
-                    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                  }}
-                >
-                  <div style={{ width: "100%", height: "300px" }}>
-                    <img
-                      src={card.image}
-                      alt={card.title}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        borderTopLeftRadius: "16px",
-                        borderTopRightRadius: "16px",
-                      }}
-                    />
-                  </div>
-                  <div
-                    style={{
-                      padding: "16px",
-                      flex: "1",
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
-                    <h3
-                      style={{
-                        fontSize: "1.25rem",
-                        marginBottom: "8px",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      {card.title}
-                    </h3>
-                    <p
-                      style={{
-                        color: "#555",
-                        marginBottom: "16px",
-                        flex: "1",
-                      }}
-                    >
-                      {card.description}
-                    </p>
-                    <Link href={card.link}>
-                      <button
-                        style={{
-                          padding: "10px 16px",
-                          backgroundColor: "#000000",
-                          color: "#92CA6A",
-                          border: "none",
-                          borderRadius: "8px",
-                          cursor: "pointer",
-                        }}
-                      >
-                        Learn More
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
+              {card.description}
+            </p>
+            <Link href={card.link}>
+              <button
+                style={{
+                  padding: "12px 24px",
+                  backgroundColor: "#000000",
+                  color: "#92CA6A",
+                  border: "none",
+                  borderRadius: "8px",
+                  cursor: "pointer",
+                  fontSize: "1rem",
+                  fontWeight: "600",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "scale(1.05)";
+                  e.currentTarget.style.boxShadow = "0 5px 15px rgba(0, 0, 0, 0.2)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                Learn More
+              </button>
+            </Link>
           </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
 
           {/* 3. About Section */}
           <div
@@ -274,19 +307,13 @@ export function Hero() {
               boxSizing: "border-box",
             }}
           >
-            <div style={{ flex: "1 1 30%", minWidth: "300px", backgroundColor: "#FAFFCA", borderRadius: "20px", padding: "20px", height: "600px" }}>
-              <h2 style={{ paddingBottom: "20px", color: "#000", fontWeight: "bold", fontSize: "1.5rem" }}>About Ecostudy 🌳</h2>
-              <h3 style={{ paddingBottom: "40px", color: "#000", fontWeight: "bold" }}>Exploring Sustainable Development in Malaysia</h3>
-              <p style={{ color: "#000" }}>
-                EcoStudy is a collaborative platform dedicated to<br />
-                investigating sustainable development and environmental <br />
-                monitoring in Malaysia through technological and managerial<br />
-                approaches. Our team of researchers focuses on <br />
-                pressing ecological and socio-economic challenges, <br />
-                leveraging tools like remote sensing, field surveys,<br />
-                and data analytics to drive actionable insights for <br />
-                conservation and policy-making.
-              </p>
+            
+            <div style={{ flex: "1 1 30%", minWidth: "300px", backgroundColor: "#FAFFCA", borderRadius: "20px", padding: "40px", height: "600px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <h2 style={{ paddingBottom: "20px", color: "#000", fontWeight: "bold", fontSize: "2rem", textAlign: "left" }}>About Ecostudy 🌳</h2>
+            <h3 style={{ paddingBottom: "40px", color: "#000", fontWeight: "bold", fontSize: "1.5rem", textAlign: "left" }}>Exploring Sustainable Development in Malaysia</h3>
+            <p style={{ color: "#000", fontSize: "1.2rem", lineHeight: "1.6", textAlign: "left" }}>
+              EcoStudy is a collaborative platform dedicated to investigating sustainable development and environmental monitoring in Malaysia through technological and managerial approaches. Our team of researchers focuses on pressing ecological and socio-economic challenges, leveraging tools like remote sensing, field surveys, and data analytics to drive actionable insights for conservation and policy-making.
+            </p>
             </div>
 
             <div style={{ flex: "1 1 70%", minWidth: "300px" }}>
@@ -304,105 +331,142 @@ export function Hero() {
           </div>
 
           {/* 4. Quiz Section */}
+          {/* 4. Quiz Section with Glass Effect */}
+<div
+  style={{
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "100px 20px",
+    position: "relative",
+  }}
+>
+  {/* Glass container for entire quiz section */}
+  <div
+    style={{
+      backgroundColor: "rgba(255, 255, 255, 0.1)",
+      backdropFilter: "blur(12px)",
+      borderRadius: "24px",
+      padding: "60px 70px",
+      width: "90%",
+      maxWidth: "1300px",
+      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
+      border: "1px solid rgba(255, 255, 255, 0.2)",
+    }}
+  >
+    {/* Quiz title */}
+    <h1
+      style={{
+        fontSize: "3.5rem",
+        fontWeight: "bold",
+        color: "white",
+        textAlign: "center",
+        marginBottom: "60px",
+        textShadow: "2px 2px 8px rgba(0, 0, 0, 0.5)"
+      }}
+    >
+      Take Quiz <span style={{ fontSize: "3rem" }}>💬</span>
+    </h1>
+
+    {/* Quiz cards container */}
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        gap: "40px",
+      }}
+    >
+      {cards.map((card) => (
+        <div
+          key={card.id}
+          style={{
+            width: "350px",
+            borderRadius: "16px",
+            overflow: "hidden",
+            display: "flex",
+            flexDirection: "column",
+            backgroundColor: "#92CA6A",
+            backdropFilter: "blur(8px)",
+            boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+            border: "1px solid rgba(255, 255, 255, 0.25)",
+            transition: "all 0.3s ease",
+          }}
+        >
           <div
             style={{
-              minHeight: "100vh",
+              padding: "30px",
+              flex: "1",
               display: "flex",
               flexDirection: "column",
-              flexWrap: "wrap",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "10px",
-              padding: "200px 20px",
-              width: "100%",
-              margin: "0 auto",
-              boxSizing: "border-box",
-              textAlign: "start",
             }}
           >
-            <h1 style={{ fontSize: "3rem", fontWeight: "bold", color: "white" }}>Take Quiz🤯</h1>
-
-            <div
+            <p
               style={{
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
-                gap: "60px",
+                color: "rgba(255, 255, 255, 0.9)",
+                marginBottom: "20px",
+                flex: "1",
+                fontSize: "1.2rem",
+                lineHeight: "1.6",
               }}
             >
-              {cards.map((card) => (
-                <div
-                  key={card.id}
-                  style={{
-                    width: "400px",
-                    height: "450px",
-                    borderRadius: "16px",
-                    overflow: "hidden",
-                    display: "flex",
-                    flexDirection: "column",
-                    backgroundColor: "#5DAD24",
-                    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                    padding: "20px"
-                  }}
-                >
-                  <div
-                    style={{
-                      padding: "16px",
-                      flex: "1",
-                      display: "flex",
-                      flexDirection: "column",
-                      backgroundColor: "#5DAD24"
-                    }}
-                  >
-                    <p
-                      style={{
-                        color: "#000",
-                        marginBottom: "16px",
-                        flex: "1",
-                      }}
-                    >
-                      {card.description}
-                    </p>
-                    <h3
-                      style={{
-                        fontSize: "1.25rem",
-                        paddingTop: "10px",
-                        marginBottom: "8px",
-                        fontWeight: "bold"
-                      }}
-                    >
-                      {card.title}
-                    </h3>
-                    <h5
-                      style={{
-                        marginBottom: "8px",
-                        color: "#FFFF",
-                        fontWeight: "lighter"
-                      }}
-                    >
-                      Alam Bina Student
-                    </h5>
-                  </div>
-                  <Link href={card.quizlink}>
-                    <button
-                      style={{
-                        marginTop: "30px",
-                        padding: "10px 16px",
-                        backgroundColor: "#000000",
-                        color: "#92CA6A",
-                        border: "none",
-                        borderRadius: "10px",
-                        cursor: "pointer",
-                        width: "100%"
-                      }}
-                    >
-                      Start
-                    </button>
-                  </Link>
-                </div>
-              ))}
-            </div>
+              {card.description}
+            </p>
+            <h3
+              style={{
+                fontSize: "1.5rem",
+                marginBottom: "8px",
+                fontWeight: "bold",
+                color: "white"
+              }}
+            >
+              {card.title}
+            </h3>
+            <h5
+              style={{
+                marginBottom: "30px",
+                color: "rgba(255, 255, 255, 0.7)",
+                fontWeight: "lighter",
+                fontSize: "1rem"
+              }}
+            >
+              Alam Bina Student
+            </h5>
+            <Link href={card.quizlink}>
+              <button
+                style={{
+                  padding: "14px 24px",
+                  backgroundColor: "rgba(0, 0, 0, 0.6)",
+                  color: "#92CA6A",
+                  border: "none",
+                  borderRadius: "10px",
+                  cursor: "pointer",
+                  fontSize: "1.1rem",
+                  fontWeight: "600",
+                  transition: "all 0.3s ease",
+                  width: "100%",
+                  backdropFilter: "blur(4px)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "scale(1.05)";
+                  e.currentTarget.style.boxShadow = "0 5px 15px rgba(0, 0, 0, 0.2)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                Start
+              </button>
+            </Link>
           </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </div>

@@ -55,6 +55,7 @@
   padding: 1.5rem;
   border-radius: 8px;
   margin-top: 1.5rem;
+  color: #2e4b29;
 }
 
 .featureList {
@@ -151,5 +152,6 @@
 .dataTable tr:hover {
   background-color: #b7e9b7;
 }
+
 
 

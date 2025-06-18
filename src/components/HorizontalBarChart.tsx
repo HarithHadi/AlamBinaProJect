@@ -30,6 +30,17 @@ const options = {
     duration: 1000,
   },
   plugins: {
+    title: {
+      display: true,
+      text: 'Top Rating for KLCC Petronas Towers',
+      font: {
+        size: 15,
+        weight: 'bold',
+      },
+      color: '#505050',
+      padding: 0,
+      align: 'center',
+    },
     legend: {
       position: 'top' as const,
     },

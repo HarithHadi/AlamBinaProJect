@@ -58,6 +58,7 @@ export function ForthParallax(){
                         <div className={style.chartdiv} ref={card1}>
                             <HorizontalBarChart shouldRender={showChart1}/>
                         </div>
+                        <p style={{fontWeight: "light",color: "#398e57"}}>All the data are taken from <a style={{fontWeight:"bold"}}href="https://www.tripadvisor.com.my/Attraction_Review-g298570-d317521-Reviews-Petronas_Twin_Towers-Kuala_Lumpur_Wilayah_Persekutuan.html">Tripadvisor</a></p>
                         
                         
                     </div>
@@ -67,6 +68,7 @@ export function ForthParallax(){
                         <div className={style.piechart}>
                             <PieChart shouldRender={showPieChart1}/>
                         </div>
+                        <p style={{fontWeight: "light",color: "#398e57"}}>All the data are taken from <a style={{fontWeight:"bold"}}href="https://www.tripadvisor.com.my/Attraction_Review-g298570-d317521-Reviews-Petronas_Twin_Towers-Kuala_Lumpur_Wilayah_Persekutuan.html">Tripadvisor</a></p>
 
                     </div>
                     <div className={style.card}>
@@ -75,6 +77,7 @@ export function ForthParallax(){
                         <div className={style.piechart}>
                             <DoughnutChart shouldRender={showDoughnut}/>
                         </div>
+                        <p style={{fontWeight: "light",color: "#398e57"}}>All the data are taken from <a style={{fontWeight:"bold"}}href="https://www.tripadvisor.com.my/Attraction_Review-g298570-d317521-Reviews-Petronas_Twin_Towers-Kuala_Lumpur_Wilayah_Persekutuan.html">Tripadvisor</a></p>
                     </div>
                 </div>
                 {/* <Quiz /> */}

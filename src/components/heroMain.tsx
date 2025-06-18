@@ -449,6 +449,14 @@ export function Hero() {
                   width: "100%",
                   backdropFilter: "blur(4px)",
                 }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "scale(1.05)";
+                  e.currentTarget.style.boxShadow = "0 5px 15px rgba(0, 0, 0, 0.2)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
               >
                 Start
               </button>

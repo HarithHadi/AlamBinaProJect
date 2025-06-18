@@ -1,12 +1,27 @@
+"use client"
+import { useEffect } from "react";
+import { Parallax } from "@/app/(StudentsPage)/syazwani/components/parallax";
+import { Secparallax } from "@/app/(StudentsPage)/syazwani/components/secparallax";
+import { Thirdparallax } from "./components/thirdparallax";
+import { ForthParallax } from "./components/forthparallax";
 
+import { Quizsection } from "./components/quizsection";
 
-/**
- * The main page component that renders the HomePage component.
- *
- * @returns {JSX.Element} The rendered HomePage component.
- */
 const Page = () => {
-    return <h1>Syazwani</h1>;
+
+    return (
+        <>
+            <div>
+                <Parallax />
+                <Secparallax /> 
+                <ForthParallax />
+                <Thirdparallax />
+                <Quizsection />
+
+
+            </div>
+        </>
+    );
 };
 
 export default Page;
